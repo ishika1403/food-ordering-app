@@ -1,0 +1,24 @@
+.container {
+  margin-bottom: 1rem;
+}
+
+.container h3 {
+  font-size: 1.5rem;
+}
+
+.container ul li div {
+  display: flex;
+  align-items: center;
+}
+
+.container ul li div label {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}

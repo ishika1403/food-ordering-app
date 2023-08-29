@@ -1,0 +1,31 @@
+.container {
+  /* border: 2px solid black; */
+}
+
+.headerContainer {
+  margin-bottom: 1rem;
+}
+
+.headerContainer h2 {
+  /* margin-bottom: 0.5rem; */
+  font-size: 1.5rem;
+}
+
+.bodyContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 2.5rem;
+}
+
+@media screen and (max-width: 810px) {
+  .bodyContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bodyContainer {
+    grid-template-columns: 1fr;
+  }
+}

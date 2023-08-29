@@ -1,0 +1,16 @@
+.container {
+  /* border: 2px solid black; */
+}
+
+.headerContainer {
+  margin-bottom: 3rem;
+}
+
+.headerContainer h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.headerContainer span {
+  font-size: 0.9rem;
+}

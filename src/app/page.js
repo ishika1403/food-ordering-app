@@ -1,95 +1,717 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import LandingPage from "@/components/Home";
+
+function getData() {
+  return [
+    {
+      id: 1,
+      name: "Spice Delight",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Indian",
+    },
+    {
+      id: 2,
+      name: "Tandoori Temptations",
+      rating: 4.2,
+      city: "Delhi",
+      cuisine: "North Indian",
+    },
+    {
+      id: 3,
+      name: "Coastal Cravings",
+      rating: 4.7,
+      city: "Chennai",
+      cuisine: "South Indian",
+    },
+    {
+      id: 4,
+      name: "Mughal Marvels",
+      rating: 4.0,
+      city: "Lucknow",
+      cuisine: "Mughlai",
+    },
+    {
+      id: 5,
+      name: "Bengal Bites",
+      rating: 4.4,
+      city: "Kolkata",
+      cuisine: "Bengali",
+    },
+    {
+      id: 6,
+      name: "Punjabi Fusion",
+      rating: 4.6,
+      city: "Amritsar",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 7,
+      name: "Spice Route",
+      rating: 4.3,
+      city: "Kochi",
+      cuisine: "Kerala",
+    },
+    {
+      id: 8,
+      name: "Rajasthani Rasoi",
+      rating: 4.1,
+      city: "Jaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 9,
+      name: "Hyderabadi Heights",
+      rating: 4.8,
+      city: "Hyderabad",
+      cuisine: "Hyderabadi",
+    },
+    {
+      id: 10,
+      name: "Goan Grub",
+      rating: 4.2,
+      city: "Goa",
+      cuisine: "Goan",
+    },
+    {
+      id: 11,
+      name: "Varanasi Veggie",
+      rating: 4.5,
+      city: "Varanasi",
+      cuisine: "Vegetarian",
+    },
+    {
+      id: 12,
+      name: "Chandigarh Chat",
+      rating: 4.0,
+      city: "Chandigarh",
+      cuisine: "Street Food",
+    },
+    {
+      id: 13,
+      name: "Kashmiri Kitchen",
+      rating: 4.4,
+      city: "Srinagar",
+      cuisine: "Kashmiri",
+    },
+    {
+      id: 14,
+      name: "Assam Aromas",
+      rating: 4.3,
+      city: "Guwahati",
+      cuisine: "Assamese",
+    },
+    {
+      id: 15,
+      name: "Mysore Magic",
+      rating: 4.7,
+      city: "Mysore",
+      cuisine: "South Indian",
+    },
+    {
+      id: 16,
+      name: "Udupi Delicacies",
+      rating: 4.6,
+      city: "Udupi",
+      cuisine: "Vegetarian",
+    },
+    {
+      id: 17,
+      name: "Nagpur Naasto",
+      rating: 4.1,
+      city: "Nagpur",
+      cuisine: "Maharashtrian",
+    },
+    {
+      id: 18,
+      name: "Bihar Bhavan",
+      rating: 4.2,
+      city: "Patna",
+      cuisine: "Bihari",
+    },
+    {
+      id: 19,
+      name: "Kolkata Kathi Rolls",
+      rating: 4.5,
+      city: "Kolkata",
+      cuisine: "Street Food",
+    },
+    {
+      id: 20,
+      name: "Pune Pastry Paradise",
+      rating: 4.3,
+      city: "Pune",
+      cuisine: "Bakery",
+    },
+    {
+      id: 21,
+      name: "Pahadi Platter",
+      rating: 4.4,
+      city: "Dehradun",
+      cuisine: "Himalayan",
+    },
+    {
+      id: 22,
+      name: "Chennai Chutney",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "South Indian",
+    },
+    {
+      id: 23,
+      name: "Mumbai Mithai",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Sweets",
+    },
+    {
+      id: 24,
+      name: "Delhi Diner",
+      rating: 4.1,
+      city: "Delhi",
+      cuisine: "Multi-Cuisine",
+    },
+    {
+      id: 25,
+      name: "Rajasthan Royals",
+      rating: 4.3,
+      city: "Jaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 26,
+      name: "Bangalore Biryani",
+      rating: 4.6,
+      city: "Bangalore",
+      cuisine: "Biryani",
+    },
+    {
+      id: 27,
+      name: "Kochi Coast",
+      rating: 4.0,
+      city: "Kochi",
+      cuisine: "Seafood",
+    },
+    {
+      id: 28,
+      name: "Patiala Pride",
+      rating: 4.2,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 29,
+      name: "Lucknowi Tunday Kebabs",
+      rating: 4.5,
+      city: "Lucknow",
+      cuisine: "Kebabs",
+    },
+    {
+      id: 30,
+      name: "Goa Grill",
+      rating: 4.3,
+      city: "Goa",
+      cuisine: "Grill",
+    },
+    {
+      id: 31,
+      name: "Amritsari Amrit",
+      rating: 4.6,
+      city: "Amritsar",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 32,
+      name: "Hyderabadi Spice",
+      rating: 4.4,
+      city: "Hyderabad",
+      cuisine: "Hyderabadi",
+    },
+    {
+      id: 33,
+      name: "Udaipur Utopia",
+      rating: 4.2,
+      city: "Udaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 34,
+      name: "Kolkata Kathi Rolls",
+      rating: 4.5,
+      city: "Kolkata",
+      cuisine: "Street Food",
+    },
+    {
+      id: 35,
+      name: "Pune Pastry Paradise",
+      rating: 4.3,
+      city: "Pune",
+      cuisine: "Bakery",
+    },
+    {
+      id: 36,
+      name: "Pahadi Platter",
+      rating: 4.4,
+      city: "Dehradun",
+      cuisine: "Himalayan",
+    },
+    {
+      id: 37,
+      name: "Chennai Chutney",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "South Indian",
+    },
+    {
+      id: 38,
+      name: "Mumbai Mithai",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Sweets",
+    },
+    {
+      id: 39,
+      name: "Delhi Diner",
+      rating: 4.1,
+      city: "Delhi",
+      cuisine: "Multi-Cuisine",
+    },
+    {
+      id: 40,
+      name: "Rajasthan Royals",
+      rating: 4.3,
+      city: "Jaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 41,
+      name: "Bangalore Biryani",
+      rating: 4.6,
+      city: "Bangalore",
+      cuisine: "Biryani",
+    },
+    {
+      id: 42,
+      name: "Kochi Coast",
+      rating: 4.0,
+      city: "Kochi",
+      cuisine: "Seafood",
+    },
+    {
+      id: 43,
+      name: "Patiala Pride",
+      rating: 4.2,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 44,
+      name: "Lucknowi Tunday Kebabs",
+      rating: 4.5,
+      city: "Lucknow",
+      cuisine: "Kebabs",
+    },
+    {
+      id: 45,
+      name: "Goa Grill",
+      rating: 4.3,
+      city: "Goa",
+      cuisine: "Grill",
+    },
+    {
+      id: 46,
+      name: "Amritsari Amrit",
+      rating: 4.6,
+      city: "Amritsar",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 47,
+      name: "Hyderabadi Spice",
+      rating: 4.4,
+      city: "Hyderabad",
+      cuisine: "Hyderabadi",
+    },
+    {
+      id: 48,
+      name: "Udaipur Utopia",
+      rating: 4.2,
+      city: "Udaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 49,
+      name: "Mangalorean Munchies",
+      rating: 4.5,
+      city: "Mangalore",
+      cuisine: "Mangalorean",
+    },
+    {
+      id: 50,
+      name: "Chettinad Charm",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "Chettinad",
+    },
+    {
+      id: 51,
+      name: "Pune Pizzas",
+      rating: 4.4,
+      city: "Pune",
+      cuisine: "Italian",
+    },
+    {
+      id: 52,
+      name: "Vibrant Vadodara",
+      rating: 4.3,
+      city: "Vadodara",
+      cuisine: "Gujarati",
+    },
+    {
+      id: 53,
+      name: "Agra Awadhi",
+      rating: 4.1,
+      city: "Agra",
+      cuisine: "Awadhi",
+    },
+    {
+      id: 54,
+      name: "Sizzling Sizzlers",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Continental",
+    },
+    {
+      id: 55,
+      name: "Bengaluru Bakes",
+      rating: 4.3,
+      city: "Bangalore",
+      cuisine: "Bakery",
+    },
+    {
+      id: 56,
+      name: "Chai & Chaat",
+      rating: 4.2,
+      city: "Delhi",
+      cuisine: "Street Food",
+    },
+    {
+      id: 57,
+      name: "Mysore Masala",
+      rating: 4.6,
+      city: "Mysore",
+      cuisine: "South Indian",
+    },
+    {
+      id: 58,
+      name: "Patiala Parathas",
+      rating: 4.4,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 59,
+      name: "Kolkata Kathi Rolls",
+      rating: 4.5,
+      city: "Kolkata",
+      cuisine: "Street Food",
+    },
+    {
+      id: 60,
+      name: "Pune Pastry Paradise",
+      rating: 4.3,
+      city: "Pune",
+      cuisine: "Bakery",
+    },
+    {
+      id: 61,
+      name: "Pahadi Platter",
+      rating: 4.4,
+      city: "Dehradun",
+      cuisine: "Himalayan",
+    },
+    {
+      id: 62,
+      name: "Chennai Chutney",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "South Indian",
+    },
+    {
+      id: 63,
+      name: "Mumbai Mithai",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Sweets",
+    },
+    {
+      id: 64,
+      name: "Delhi Diner",
+      rating: 4.1,
+      city: "Delhi",
+      cuisine: "Multi-Cuisine",
+    },
+    {
+      id: 65,
+      name: "Rajasthan Royals",
+      rating: 4.3,
+      city: "Jaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 66,
+      name: "Bangalore Biryani",
+      rating: 4.6,
+      city: "Bangalore",
+      cuisine: "Biryani",
+    },
+    {
+      id: 67,
+      name: "Kochi Coast",
+      rating: 4.0,
+      city: "Kochi",
+      cuisine: "Seafood",
+    },
+    {
+      id: 68,
+      name: "Patiala Pride",
+      rating: 4.2,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 69,
+      name: "Lucknowi Tunday Kebabs",
+      rating: 4.5,
+      city: "Lucknow",
+      cuisine: "Kebabs",
+    },
+    {
+      id: 70,
+      name: "Goa Grill",
+      rating: 4.3,
+      city: "Goa",
+      cuisine: "Grill",
+    },
+    {
+      id: 71,
+      name: "Amritsari Amrit",
+      rating: 4.6,
+      city: "Amritsar",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 72,
+      name: "Hyderabadi Spice",
+      rating: 4.4,
+      city: "Hyderabad",
+      cuisine: "Hyderabadi",
+    },
+    {
+      id: 73,
+      name: "Udaipur Utopia",
+      rating: 4.2,
+      city: "Udaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 74,
+      name: "Mangalorean Munchies",
+      rating: 4.5,
+      city: "Mangalore",
+      cuisine: "Mangalorean",
+    },
+    {
+      id: 75,
+      name: "Chettinad Charm",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "Chettinad",
+    },
+    {
+      id: 76,
+      name: "Pune Pizzas",
+      rating: 4.4,
+      city: "Pune",
+      cuisine: "Italian",
+    },
+    {
+      id: 77,
+      name: "Vibrant Vadodara",
+      rating: 4.3,
+      city: "Vadodara",
+      cuisine: "Gujarati",
+    },
+    {
+      id: 78,
+      name: "Agra Awadhi",
+      rating: 4.1,
+      city: "Agra",
+      cuisine: "Awadhi",
+    },
+    {
+      id: 79,
+      name: "Sizzling Sizzlers",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Continental",
+    },
+    {
+      id: 80,
+      name: "Bengaluru Bakes",
+      rating: 4.3,
+      city: "Bangalore",
+      cuisine: "Bakery",
+    },
+    {
+      id: 81,
+      name: "Chai & Chaat",
+      rating: 4.2,
+      city: "Delhi",
+      cuisine: "Street Food",
+    },
+    {
+      id: 82,
+      name: "Mysore Masala",
+      rating: 4.6,
+      city: "Mysore",
+      cuisine: "South Indian",
+    },
+    {
+      id: 83,
+      name: "Patiala Parathas",
+      rating: 4.4,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 84,
+      name: "Kolkata Kathi Rolls",
+      rating: 4.5,
+      city: "Kolkata",
+      cuisine: "Street Food",
+    },
+    {
+      id: 85,
+      name: "Pune Pastry Paradise",
+      rating: 4.3,
+      city: "Pune",
+      cuisine: "Bakery",
+    },
+    {
+      id: 86,
+      name: "Pahadi Platter",
+      rating: 4.4,
+      city: "Dehradun",
+      cuisine: "Himalayan",
+    },
+    {
+      id: 87,
+      name: "Chennai Chutney",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "South Indian",
+    },
+    {
+      id: 88,
+      name: "Mumbai Mithai",
+      rating: 4.5,
+      city: "Mumbai",
+      cuisine: "Sweets",
+    },
+    {
+      id: 89,
+      name: "Delhi Diner",
+      rating: 4.1,
+      city: "Delhi",
+      cuisine: "Multi-Cuisine",
+    },
+    {
+      id: 90,
+      name: "Rajasthan Royals",
+      rating: 4.3,
+      city: "Jaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 91,
+      name: "Bangalore Biryani",
+      rating: 4.6,
+      city: "Bangalore",
+      cuisine: "Biryani",
+    },
+    {
+      id: 92,
+      name: "Kochi Coast",
+      rating: 4.0,
+      city: "Kochi",
+      cuisine: "Seafood",
+    },
+    {
+      id: 93,
+      name: "Patiala Pride",
+      rating: 4.2,
+      city: "Patiala",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 94,
+      name: "Lucknowi Tunday Kebabs",
+      rating: 4.5,
+      city: "Lucknow",
+      cuisine: "Kebabs",
+    },
+    {
+      id: 95,
+      name: "Goa Grill",
+      rating: 4.3,
+      city: "Goa",
+      cuisine: "Grill",
+    },
+    {
+      id: 96,
+      name: "Amritsari Amrit",
+      rating: 4.6,
+      city: "Amritsar",
+      cuisine: "Punjabi",
+    },
+    {
+      id: 97,
+      name: "Hyderabadi Spice",
+      rating: 4.4,
+      city: "Hyderabad",
+      cuisine: "Hyderabadi",
+    },
+    {
+      id: 98,
+      name: "Udaipur Utopia",
+      rating: 4.2,
+      city: "Udaipur",
+      cuisine: "Rajasthani",
+    },
+    {
+      id: 99,
+      name: "Mangalorean Munchies",
+      rating: 4.5,
+      city: "Mangalore",
+      cuisine: "Mangalorean",
+    },
+    {
+      id: 100,
+      name: "Chettinad Charm",
+      rating: 4.2,
+      city: "Chennai",
+      cuisine: "Chettinad",
+    },
+  ];
+}
 
 export default function Home() {
+  const data = getData();
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <>
+      <LandingPage data={data} />
+    </>
+  );
 }

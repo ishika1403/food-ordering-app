@@ -1,0 +1,54 @@
+.container {
+  /* border: 2px solid black; */
+}
+
+.imgContainer {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.detailContainer h3 {
+  font-size: 1rem;
+}
+.detailContainer h4 {
+  font-size: 0.8rem;
+  color: grey;
+  font-weight: 400;
+}
+
+.btnContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btnContainer button {
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.favBtn {
+  background-color: transparent;
+  border: 2px solid #5b9483;
+  color: #5b9483;
+}
+
+.favBtnSelected {
+  background-color: #5b9483;
+  border: 2px solid #5b9483;
+  color: white;
+}
+
+.menuBtn {
+  border: none;
+  background-color: #fc8019;
+  color: white;
+}
