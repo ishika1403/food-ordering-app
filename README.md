@@ -3,7 +3,7 @@
 - [Table of Contents](#table-of-contents)
 - [Food Ordering Project](#food-ordering-project)
   - [Prerequisites](#prerequisites)
-  - [Getting Started](#getting-started)
+  - [Getting Started - Setup Instructions](#getting-started---setup-instructions)
     - [Clone Repository](#clone-repository)
     - [Install Dependencies](#install-dependencies)
     - [Run Development Server](#run-development-server)
@@ -21,7 +21,7 @@ Before you begin, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/): Make sure you have Node.js installed on your system.
 
-## Getting Started
+## Getting Started - Setup Instructions
 
 Follow these steps to set up and run the project locally:
 
