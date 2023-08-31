@@ -1,0 +1,97 @@
+/* Navbar.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.menuIcon {
+  display: none; /* Hide menu icon by default on larger screens */
+  cursor: pointer;
+}
+
+.menuIcon.open {
+  /* Add styling for open menu icon if needed */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks.open {
+  /* Add styling for open menu links if needed */
+}
+
+.navLinks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navLinks ul li {
+  margin: 0 15px;
+}
+
+.navLinks ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.signInButton {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block; /* Display menu icon on smaller screens */
+  }
+
+  .navLinks {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background-color: #333;
+    flex-direction: column;
+    padding-top: 80px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 3;
+  }
+
+  .navLinks.open {
+    transform: translateX(0);
+  }
+
+  .navLinks ul {
+    flex-direction: column;
+  }
+
+  .navLinks ul li {
+    margin-bottom: 1rem;
+  }
+}

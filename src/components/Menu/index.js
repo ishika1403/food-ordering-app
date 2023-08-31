@@ -8,8 +8,6 @@ import Link from "next/link";
 const MenuPage = ({ data }) => {
   return (
     <div className={styles.container}>
-      <button onClick={() => signOut()}>Sign out</button>
-      <Link href="/cart">Go to Cart</Link>
       {/* header with restaurant name */}
       <div className={styles.headerContainer}>
         <h1>{data.name}</h1>
