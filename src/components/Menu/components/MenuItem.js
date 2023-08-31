@@ -41,8 +41,8 @@ const MenuItem = ({ data, restaurant }) => {
     <div className={styles.menuItem}>
       <div className={styles.imgContainer}>
         <Image
-          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-          alt="Picture of the rest"
+          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+          alt="food item"
           fill
           objectFit="cover"
         />

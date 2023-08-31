@@ -46,7 +46,11 @@
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
-  overflow: hidden;
+  min-height: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
 }
 
 .billContainer h2 {
@@ -56,9 +60,9 @@
 .billDetailsContainer {
   /* border: 2px solid black; */
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
-  height: 90%;
 }
 
 .billHeadsContainer {
@@ -78,8 +82,8 @@
 
 .billTotalContainer {
   border-top: 2px solid grey;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  /* padding-bottom: 1.5rem; */
 }
 
 .billTotalContainer div {
