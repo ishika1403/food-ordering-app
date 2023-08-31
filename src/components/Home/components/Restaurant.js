@@ -3,23 +3,31 @@ import {
   deleteFavourite,
 } from "@/redux/features/favourites-slice";
 import styles from "./restaurant.module.css";
+import Link from "next/link";
 import Image from "next/image";
 import { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useSession } from "next-auth/react";
 
 const Restaurant = ({ restaurant }) => {
   const dispatch = useDispatch();
   const favouritesState = useSelector((state) => state.favourites);
+
+  const { status } = useSession();
 
   const isFavourite = useMemo(() => {
     return favouritesState.some((r) => r.id === restaurant.id);
   }, [favouritesState]);
 
   const handleFavBtnClick = () => {
-    if (!isFavourite) {
-      dispatch(addFavourite(restaurant));
+    if (status === "unauthenticated") {
+      alert("Sign in to Add to Favourites!");
     } else {
-      dispatch(deleteFavourite(restaurant));
+      if (!isFavourite) {
+        dispatch(addFavourite(restaurant));
+      } else {
+        dispatch(deleteFavourite(restaurant));
+      }
     }
   };
 
@@ -43,10 +51,17 @@ const Restaurant = ({ restaurant }) => {
           <button
             className={isFavourite ? styles.favBtnSelected : styles.favBtn}
             onClick={handleFavBtnClick}
+            disabled={status === "loading"}
           >
-            {isFavourite ? "Remove Favourite" : "Add Favourite"}
+            {status === "loading"
+              ? "Authenticating..."
+              : isFavourite
+              ? "Remove Favourite"
+              : "Add Favourite"}
           </button>
-          <button className={styles.menuBtn}>Menu</button>
+          <Link href={`/restaurants/${restaurant.id}/menu`}>
+            <button className={styles.menuBtn}>Menu</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const LandingPage = ({ data }) => {
       <Link href="/favourites">Go to Fav</Link>
       <div className={styles.container}>
         {/* Filters */}
-        <Filter />
+        <Filter data={data} />
         {/* Restaurants */}
         <RestaurantList data={data} />
       </div>

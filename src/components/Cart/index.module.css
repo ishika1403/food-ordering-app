@@ -1,0 +1,35 @@
+.container {
+  /* border: 2px solid black; */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.headerContainer {
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.headerContainer h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-right: 1rem;
+}
+
+.cartBodyContainer {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 2rem;
+}
+
+.cartItemsContainer {
+  border: 2px solid red;
+}
+
+.cartItemsContainer h2 {
+  margin-bottom: 2rem;
+}

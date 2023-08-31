@@ -2,7 +2,12 @@
 
 import store from "./store";
 import { Provider } from "react-redux";
+import { SessionProvider } from "next-auth/react";
 
 export const ReduxProvider = ({ children }) => {
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <SessionProvider>{children}</SessionProvider>
+    </Provider>
+  );
 };

@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateFilter, resetFilter } from "@/redux/features/filter-slice";
 
 const FilterOptions = ({ filter }) => {
-  const [checked, setChecked] = useState([]);
   const dispatch = useDispatch();
+  const [checked, setChecked] = useState([]);
   const filterState = useSelector((state) => state.filter);
 
   useEffect(() => {
@@ -29,21 +29,26 @@ const FilterOptions = ({ filter }) => {
 
   return (
     <div className={styles.container}>
-      <h3>{filter.name}</h3>
+      <h3>{filter.title}</h3>
       <ul>
-        {filter.values.map((v, i) => {
+        {filter.values.map((value, i) => {
+          const filterValue = value[0];
+          const filterValueCount = value[1];
+
           return (
             <li key={i}>
               <div>
                 <input
                   type="checkbox"
-                  id={`${filter.name}-${v}`}
-                  name={v}
-                  value={v}
-                  checked={checked.includes(v)}
+                  id={`${filter.name}-${filterValue}`}
+                  name={filter.name}
+                  value={filterValue}
+                  checked={checked.includes(filterValue.toString())}
                   onChange={handleOptionChange}
                 />
-                <label htmlFor={`${filter.name}-${v}`}>{v}</label>
+                <label
+                  htmlFor={`${filter.name}-${filterValue}`}
+                >{`${filterValue} (${filterValueCount})`}</label>
               </div>
             </li>
           );
@@ -54,6 +59,13 @@ const FilterOptions = ({ filter }) => {
 };
 
 export default FilterOptions;
+
+/**
+ * {
+ * name:filter name
+ * values:[1,2]
+ * }
+ */
 
 /**
  * {

@@ -1,0 +1,64 @@
+.menuItem {
+  border: 2px dotted grey;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.imgContainer {
+  width: 7.5rem;
+  height: 7rem;
+  position: relative;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+
+.detailsContainer {
+  /* border: 2px solid green; */
+  /* width: 100%; */
+}
+
+.detailsContainer h4 {
+  font-size: 1.2rem;
+}
+
+.detailsContainer p {
+  font-size: 0.8rem;
+}
+
+.btnContainer {
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnContainer button:disabled {
+  cursor: not-allowed;
+}
+
+.cartBtn {
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  background-color: #fc8019;
+  color: white;
+}
+
+.qtyBtn {
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  background-color: white;
+}
