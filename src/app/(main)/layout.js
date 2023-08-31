@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 import { Poppins } from "next/font/google";
 import { ReduxProvider } from "@/redux/provider";
 import Navbar from "@/components/Navbar";
