@@ -18,3 +18,7 @@ export default async function Home() {
     </>
   );
 }
+
+export const metaData = {
+  title: "Food Ordering App - Sign In",
+};
