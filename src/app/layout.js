@@ -12,6 +12,9 @@ export default function RootLayout({ children }) {
           <ReduxProvider>{children}</ReduxProvider>
         </div>
       </body>
+      <footer className="footerContainer">
+        <span>Made with NextJS </span>
+      </footer>
     </html>
   );
 }

@@ -48,7 +48,7 @@ const FilterOptions = ({ filter }) => {
                 />
                 <label
                   htmlFor={`${filter.name}-${filterValue}`}
-                >{`${filterValue} (${filterValueCount})`}</label>
+                >{`${filterValue}`}</label>
               </div>
             </li>
           );

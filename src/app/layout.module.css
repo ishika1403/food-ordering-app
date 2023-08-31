@@ -1,0 +1,10 @@
+.footerContainer {
+  width: 100%;
+  padding: 40px;
+  font-size: 1.05rem;
+  background-color: #e2e8f0;
+}
+
+.card span {
+  margin: 0 auto;
+}

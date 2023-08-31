@@ -20,16 +20,68 @@
 }
 
 .cartBodyContainer {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 2rem;
 }
 
 .cartItemsContainer {
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .cartItemsContainer h2 {
   margin-bottom: 2rem;
+}
+
+.billContainer {
+  border: 2px dotted grey;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.billContainer h2 {
+  margin-bottom: 2rem;
+}
+
+.billDetailsContainer {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+.billHeadsContainer {
+  /* border: 2px solid black; */
+}
+
+.billHeadsContainer div {
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.billHeadsContainer div span {
+  font-size: 1rem;
+  color: gray;
+}
+
+.billTotalContainer {
+  border-top: 2px solid grey;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.billTotalContainer div {
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.billTotalContainer div span {
+  font-size: 1rem;
+  color: gray;
 }

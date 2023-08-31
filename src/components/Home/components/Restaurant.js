@@ -47,6 +47,7 @@ const Restaurant = ({ restaurant }) => {
       <div className={styles.detailContainer}>
         <h3>{restaurant.name}</h3>
         <h4>{`Rating : ${restaurant.rating} star(s)`}</h4>
+        <h4>{`Cuisine : ${restaurant.cuisine}`}</h4>
         <div className={styles.btnContainer}>
           <button
             className={isFavourite ? styles.favBtnSelected : styles.favBtn}
@@ -59,9 +60,10 @@ const Restaurant = ({ restaurant }) => {
               ? "Remove Favourite"
               : "Add Favourite"}
           </button>
-          <Link href={`/restaurants/${restaurant.id}/menu`}>
-            <button className={styles.menuBtn}>Menu</button>
-          </Link>
+
+          <button className={styles.menuBtn}>
+            <Link href={`/restaurants/${restaurant.id}/menu`}>Menu</Link>
+          </button>
         </div>
       </div>
     </div>
