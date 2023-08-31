@@ -1,6 +1,7 @@
 import styles from "./restaurantList.module.css";
 import { useSelector } from "react-redux";
 import Restaurant from "./Restaurant";
+import EmptyRestaurantList from "./EmptyRestaurantList";
 import { useMemo } from "react";
 
 const RestaurantList = ({ data }) => {
@@ -29,10 +30,13 @@ const RestaurantList = ({ data }) => {
         <h2>Restaurants</h2>
       </div>
       <div className={styles.bodyContainer}>
-        {restaurants.length > 0 &&
+        {restaurants.length > 0 ? (
           restaurants.map((restaurant) => {
             return <Restaurant key={restaurant.id} restaurant={restaurant} />;
-          })}
+          })
+        ) : (
+          <EmptyRestaurantList />
+        )}
       </div>
     </div>
   );

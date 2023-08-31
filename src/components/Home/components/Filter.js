@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import FilterOptions from "./FilterOptions";
 
 const Filter = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const filters = useMemo(() => {
     let customFilters = [
       {
@@ -50,10 +51,20 @@ const Filter = ({ data }) => {
       <div className={styles.headerContainer}>
         <h2>Filter</h2>
         <span>Check multiple boxes below to narrow restaurants results</span>
+        <button className={styles.filterBtn} onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "Apply Filters" : "View Filters"}
+        </button>
       </div>
-      {filters.map((filter, index) => {
-        return <FilterOptions key={index} filter={filter} />;
-      })}
+
+      <div
+        className={`${styles.filterOptions} ${styles.filterOptionsClosed} ${
+          isOpen && styles.filterOptionsOpen
+        }`}
+      >
+        {filters.map((filter, index) => {
+          return <FilterOptions key={index} filter={filter} />;
+        })}
+      </div>
     </div>
   );
 };

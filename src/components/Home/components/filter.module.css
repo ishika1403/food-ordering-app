@@ -3,7 +3,7 @@
 }
 
 .headerContainer {
-  margin-bottom: 3rem;
+  margin-bottom: 1.8rem;
 }
 
 .headerContainer h2 {
@@ -13,4 +13,37 @@
 
 .headerContainer span {
   font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 0.7rem;
+}
+
+.filterOptions {
+  display: block;
+}
+
+.filterBtn {
+  display: none;
+}
+
+@media screen and (max-width: 810px) {
+  .filterOptionsClosed {
+    display: none;
+  }
+
+  .filterOptionsOpen {
+    display: block;
+  }
+
+  .filterBtn {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    background-color: #38a169;
+    color: white;
+  }
 }

@@ -1,0 +1,13 @@
+.emptyStateContainer {
+  /* border: 2px solid black; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* width: 100%; */
+}
+
+.emptyStateContainer h3 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
