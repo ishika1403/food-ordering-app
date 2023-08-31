@@ -19,15 +19,18 @@ export default function SignInPage() {
       password: "",
     },
     validationSchema: SigninSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { setSubmitting }) => {
+      setSubmitting(true);
       const response = await signIn("credentials", {
         ...values,
         redirect: false,
       });
+
       if (!response.ok) {
+        setSubmitting(false);
         alert("Invalid credentials! Try again.");
       } else {
-        router.replace("/");
+        router.refresh();
       }
     },
   });
@@ -37,7 +40,7 @@ export default function SignInPage() {
       <div className={styles.formDiv}>
         <form onSubmit={formik.handleSubmit} className={styles.form}>
           <h1>Sign In</h1>
-          <div>
+          <div className={styles.fieldContainer}>
             <input
               id="username"
               name="username"
@@ -47,10 +50,10 @@ export default function SignInPage() {
               placeholder="Username"
             />
             {formik.touched.username && formik.errors.username && (
-              <div>{formik.errors.username}</div>
+              <span>{formik.errors.username}</span>
             )}
           </div>
-          <div>
+          <div className={styles.fieldContainer}>
             <input
               id="password"
               name="password"
@@ -59,9 +62,14 @@ export default function SignInPage() {
               value={formik.values.password}
               placeholder="Password"
             />
+            {formik.touched.password && formik.errors.password && (
+              <span>{formik.errors.password}</span>
+            )}
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={formik.isSubmitting}>
+            {formik.isSubmitting ? "Signing In..." : "Sign In"}
+          </button>
         </form>
       </div>
     </div>
