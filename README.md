@@ -1,3 +1,16 @@
+# Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Food Ordering Project](#food-ordering-project)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+    - [Clone Repository](#clone-repository)
+    - [Install Dependencies](#install-dependencies)
+    - [Run Development Server](#run-development-server)
+  - [Project Structure](#project-structure)
+  - [App Features](#app-features)
+  - [Next.js v13](#nextjs-v13)
+
 # Food Ordering Project
 
 Welcome to the Food Ordering Project! This is a web application built using Next.js for placing food orders.
@@ -45,6 +58,8 @@ Follow these steps to set up and run the project locally:
    ```
 
 2. Open your web browser and go to http://localhost:3000 to access the application.
+
+3. Put username as `johndoe` and password as `demo` for signing into the application.
 
 ## Project Structure
 
@@ -101,3 +116,7 @@ All pages are server rendered with react server components and fetched data is c
   - Data related to the cart is stored locally in the Redux store.
 
 Please note that the application's functionality depends on user authentication. Certain features like adding to favourites, adding to cart, and accessing specific pages are only accessible to signed-in users. Redirection occurs when attempting to access these features without signing in.
+
+## Next.js v13
+
+In Next.js version 13, a new App Router is introduced, leveraging React Server Components. This router brings advanced features like shared layouts, nested routing, loading states, and error handling, ushering in a new approach to application development with the latest React capabilities. Unlike the traditional Pages Directory approach, the App Router maintains routing using a slightly modified folder convention, offering a fresh perspective to address previous limitations.
